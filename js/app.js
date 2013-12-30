@@ -25,13 +25,13 @@ App.ProductsRoute = Ember.Route.extend({
 
 App.PRODUCTS = [
   {
-    name: 'Birch',
+    title: 'Birch',
     image: 'img/products/birch.png',
     description: 'It burns well, without popping, even when frozen and freshly hewn. The bark will burn very well even when wet because of the oils it contains.',
     price: 10
   },
   {
-    name: 'Bow-drill',
+    title: 'Bow-drill',
     image: 'img/products/bow-drill.png',
     description: 'This is an ancient method of starting fire without matches or a lighter. It uses friction to generate heat.',
     price: 20
