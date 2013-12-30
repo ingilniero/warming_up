@@ -3,7 +3,6 @@ var App = Ember.Application.create({
 });
 
 App.Router.map(function() {
-  this.route('about', { path: '/aboutus' });
   this.route('credits');
 
   this.resource('products', function() {
@@ -16,6 +15,14 @@ App.IndexController = Ember.Controller.extend({
   logo: 'img/logo.png',
   time: function() {
     return (new Date).toDateString();
+  }.property()
+});
+
+App.ContactsIndexController = Ember.Controller.extend({
+  contactName: 'Anostagia',
+  avatar: 'img/contacts/avatar.png',
+  open: function() {
+    return ((new Date()).getDay() == 0) ? 'Closed' : 'Open';
   }.property()
 });
 
