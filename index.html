@@ -8,8 +8,8 @@
     <div class='navbar navbar-default'>
       <div class='container'>
         <ul class='nav navbar-nav navbar-right'>
-         <li><a href="./index.html">Home</a></li>
-         <li><a href="./index.html#/aboutus">About</a></li>
+         <li>{{#link-to 'index' }}Home{{/link-to}}</li>
+         <li>{{#link-to 'about' }}About{{/link-to}}</li>
         </ul>
       </div>
     </div>
@@ -21,7 +21,7 @@
     <footer class='container'>
       <hr />
       <p class='pull-left'>&copy; 2013 The Flint &amp; Flame</p>
-      <p class='pull-right'><a href='#/credits'>Credits</a></p>
+      <p class='pull-right'>{{#link-to 'credits' }}Credits{{/link-to}}</p>
     </footer>
     </script>
 
