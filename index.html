@@ -52,11 +52,18 @@
           <div class='col-sm-7'>
             <h2>{{title}}</h2>
             <p class='product-description'>{{description}}</p>
-            <p><button class='btn btn-success'>Buy for ${{price}}</button></p>
+            <p>{{#link-to 'product' this tagName='button' class='btn
+            btn-success'}}Buy for ${{price}}{{/link-to}}</p>
           </div>
         </li>
         {{/each}}
       </ul>
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='product'>
+      <h2>{{title}}</h2>
+      <img {{bind-attr src='image'}} alt="" />
+      <p>${{price}}</p>
     </script>
 
     <script src='js/libs/jquery-1.10.2.js'></script>
