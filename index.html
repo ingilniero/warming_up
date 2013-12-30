@@ -29,6 +29,9 @@
 
     <script type='text/x-handlebars' data-template-name='index'>
       <h1>Welcome to The Flint & Flame!</h1>
+      <p>There are {{ productsCount }} products in the shopping cart</p>
+      <p>This is our logo <img {{bind-attr src='logo'}} alt="logo" /></p>
+      <p>This was rendered on {{ time }}</p>
     </script>
 
     <script type='text/x-handlebars' data-template-name='about'>
