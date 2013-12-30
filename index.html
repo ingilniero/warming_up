@@ -61,9 +61,16 @@
     </script>
 
     <script type='text/x-handlebars' data-template-name='product'>
-      <h2>{{title}}</h2>
-      <img {{bind-attr src='image'}} alt="" />
-      <p>${{price}}</p>
+     <div class='row'>
+      <div class='col-sm-7'>
+        <h2>{{title}}</h2>
+        <h3 class='text-success'>${{price}}</h3>
+        <p class='text-muted'>{{description}}</p>
+      </div>
+      <div class='col-sm-5'>
+        <img {{bind-attr src='image'}} class='img-thumbnail img-rounded'/>
+      </div>
+    </div>
     </script>
 
     <script src='js/libs/jquery-1.10.2.js'></script>
