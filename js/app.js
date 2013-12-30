@@ -7,6 +7,7 @@ App.Router.map(function() {
   this.route('credits');
 
   this.resource('products');
+  this.resource('product', { path: '/products/:title' });
 });
 
 App.IndexController = Ember.Controller.extend({
@@ -20,6 +21,12 @@ App.IndexController = Ember.Controller.extend({
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return App.PRODUCTS;
+  }
+});
+
+App.ProductRoute = Ember.Route.extend({
+  model: function(params) {
+    return App.PRODUCTS.findBy('title', params.title);
   }
 });
 
