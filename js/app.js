@@ -5,6 +5,8 @@ var App = Ember.Application.create({
 App.Router.map(function() {
   this.route('about', { path: '/aboutus' });
   this.route('credits');
+
+  this.resource('products');
 });
 
 App.IndexController = Ember.Controller.extend({
