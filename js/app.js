@@ -13,7 +13,7 @@ App.Router.map(function() {
 
 
   this.resource('contacts', function() {
-    this.resource('contact', { path: '/:name' });
+    this.resource('contact', { path: '/:contact_id' });
   });
 });
 
