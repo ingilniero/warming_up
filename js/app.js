@@ -62,13 +62,13 @@ App.ProductRoute = Ember.Route.extend({
 
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
-    return App.CONTACTS;
+    return this.store.findAll('contact');
   }
 });
 
 App.ContactRoute = Ember.Route.extend({
   model: function(params) {
-    return App.CONTACTS.findBy('name', params.name);
+    return this.store.find('contact', params.contact_id);
   }
 });
 
