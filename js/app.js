@@ -44,13 +44,13 @@ App.ContactsIndexController = Ember.Controller.extend({
 
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
-    return App.PRODUCTS;
+    return this.store.findAll('product');
   }
 });
 
 App.ProductRoute = Ember.Route.extend({
   model: function(params) {
-    return App.PRODUCTS.findBy('title', params.title);
+    return this.store.find('product', params.product_id);
   }
 });
 
