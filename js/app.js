@@ -24,13 +24,15 @@ App.Product = DS.Model.extend({
   description: DS.attr('string'),
   isOnSale: DS.attr('boolean'),
   price: DS.attr('number'),
-  reviews: DS.hasMany('review', { async: true })
+  reviews: DS.hasMany('review', { async: true }),
+  crafter: DS.belongsTo('contact', { async: true })
 });
 
 App.Contact = DS.Model.extend({
   name: DS.attr('string'),
   about: DS.attr('string'),
-  avatar: DS.attr('string')
+  avatar: DS.attr('string'),
+  products: DS.hasMany('product', { async: true })
 });
 
 
@@ -88,7 +90,8 @@ App.Product.FIXTURES = [
     description: 'It burns well, without popping, even when frozen and freshly hewn. The bark will burn very well even when wet because of the oils it contains.',
     isOnSale: true,
     price: 10,
-    reviews: [100, 101]
+    reviews: [100, 101],
+    crafter: 1
   },
   {
     id: 2,
@@ -97,7 +100,8 @@ App.Product.FIXTURES = [
     description: 'This is an ancient method of starting fire without matches or a lighter. It uses friction to generate heat.',
     isOnSale: true,
     price: 20,
-    reviews:[]
+    reviews:[],
+    crafter: 2
   }
 ];
 
@@ -122,12 +126,14 @@ App.Contact.FIXTURES = [
     id: 1,
     name: 'Giamia',
     about: 'Although Giamia cmae form a humble spark of lightning, he quickly grew to be a great craftsman, providing  all the warming instruments needed by those close to him.',
-    avatar: 'img/contacts/giamia.png'
+    avatar: 'img/contacts/giamia.png',
+    products: [1]
   },
   {
     id: 2,
     name: 'Anostagia',
     about: 'Knowing there was a need for it, Anostagia drew on her experience and spearheaded the Flint & Flame storefront. In addition to coding the site, she also creates a few products available in the store.',
-    avatar: 'img/contacts/anostagia.png'
+    avatar: 'img/contacts/anostagia.png',
+    products: [2]
   }
 ];
