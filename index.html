@@ -83,6 +83,16 @@
         <img {{bind-attr src='image' alt='title'}} class='img-thumbnail img-rounded'/>
       </div>
     </div>
+    <div class='row'>
+    <h2>Reviews</h2>
+    <ul>
+      {{#each review in reviews}}
+        <li>{{review.text}}</li>
+      {{else}}
+        <p class='text-muted'>No reviews yet.</p>
+      {{/each}}
+    </ul>
+    </div>
     </script>
 
     <script type='text/x-handlebars' data-template-name='contacts'>
