@@ -32,6 +32,13 @@ App.Contact = DS.Model.extend({
   avatar: DS.attr('string')
 });
 
+
+App.Review = DS.Model.extend({
+  text: DS.attr('string'),
+  reviewedAt: DS.attr('date'),
+  product: DS.belongsTo('product')
+});
+
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
   logo: 'img/logo.png',
