@@ -26,6 +26,12 @@ App.Product = DS.Model.extend({
   price: DS.attr('number')
 });
 
+App.Contact = DS.Model.extend({
+  name: DS.attr('string'),
+  about: DS.attr('string'),
+  avatar: DS.attr('string')
+});
+
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
   logo: 'img/logo.png',
