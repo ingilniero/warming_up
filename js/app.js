@@ -87,7 +87,8 @@ App.Product.FIXTURES = [
     image: 'img/products/birch.png',
     description: 'It burns well, without popping, even when frozen and freshly hewn. The bark will burn very well even when wet because of the oils it contains.',
     isOnSale: true,
-    price: 10
+    price: 10,
+    reviews: [100, 101]
   },
   {
     id: 2,
@@ -95,7 +96,24 @@ App.Product.FIXTURES = [
     image: 'img/products/bow-drill.png',
     description: 'This is an ancient method of starting fire without matches or a lighter. It uses friction to generate heat.',
     isOnSale: true,
-    price: 20
+    price: 20,
+    reviews:[]
+  }
+];
+
+
+App.Review.FIXTURES = [
+  {
+    id: 100,
+    text: 'Nice product',
+    reviewedAt: new Date(),
+    product: 1
+  },
+  {
+    id: 101,
+    text: 'Good one',
+    reviewedAt: new Date(),
+    product: 1
   }
 ];
 
