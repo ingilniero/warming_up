@@ -17,6 +17,15 @@ App.Router.map(function() {
   });
 });
 
+
+App.Product = DS.Model.extend({
+  title: DS.attr('string'),
+  image: DS.attr('string'),
+  description: DS.attr('string'),
+  isOnSale: DS.attr('boolean'),
+  price: DS.attr('number')
+});
+
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
   logo: 'img/logo.png',
