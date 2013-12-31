@@ -8,7 +8,7 @@ App.Router.map(function() {
   this.route('credits');
 
   this.resource('products', function() {
-    this.resource('product', { path: '/:title' });
+    this.resource('product', { path: '/:product_id' });
   });
 
 
@@ -57,17 +57,21 @@ App.ContactRoute = Ember.Route.extend({
   }
 });
 
-App.PRODUCTS = [
+App.Product.FIXTURES = [
   {
+    id: 1,
     title: 'Birch',
     image: 'img/products/birch.png',
     description: 'It burns well, without popping, even when frozen and freshly hewn. The bark will burn very well even when wet because of the oils it contains.',
+    isOnSale: true,
     price: 10
   },
   {
+    id: 2,
     title: 'Bow-drill',
     image: 'img/products/bow-drill.png',
     description: 'This is an ancient method of starting fire without matches or a lighter. It uses friction to generate heat.',
+    isOnSale: true,
     price: 20
   }
 ];
