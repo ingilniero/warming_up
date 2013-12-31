@@ -23,7 +23,8 @@ App.Product = DS.Model.extend({
   image: DS.attr('string'),
   description: DS.attr('string'),
   isOnSale: DS.attr('boolean'),
-  price: DS.attr('number')
+  price: DS.attr('number'),
+  reviews: DS.hasMany('review', { async: true })
 });
 
 App.Contact = DS.Model.extend({
