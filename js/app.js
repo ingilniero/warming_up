@@ -50,13 +50,19 @@ App.IndexController = Ember.ArrayController.extend({
   }.property()
 });
 
-App.ContactsIndexController = Ember.Controller.extend({
-  contactName: 'Anostagia',
+App.ContactsIndexController = Ember.ObjectController.extend({
+  contactName: Ember.computed.alias('name'),
   avatar: 'img/contacts/avatar.png',
   open: function() {
     return ((new Date()).getDay() == 0) ? 'Closed' : 'Open';
   }.property()
 });
+
+App.ContactsIndexRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('contact', 2)
+  }
+})
 
 App.ProductsController = Ember.ArrayController.extend({
   sortProperties: ['title'],
