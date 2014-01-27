@@ -43,9 +43,7 @@ App.Review = DS.Model.extend({
 });
 
 App.IndexController = Ember.ArrayController.extend({
-  productsCount: function() {
-    return this.get('length');
-  }.property('length'),
+  productsCount: Ember.computed.alias('length'),
   logo: 'img/logo.png',
   time: function() {
     return (new Date).toDateString();
