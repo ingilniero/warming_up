@@ -29,10 +29,17 @@
     </script>
 
     <script type='text/x-handlebars' data-template-name='index'>
-      <h1>Welcome to The Flint & Flame!</h1>
-      <p>There are {{ productsCount }} products in the shopping cart</p>
-      <p>This is our logo <img {{bind-attr src='logo'}} alt="logo" /></p>
-      <p>This was rendered on {{ time }}</p>
+      {{#each onSale}}
+        <diV class='col-sm-4'>
+          <img {{bind-attr src='image'}} class='img-thubmnail col-sm-5' />
+          <div class='col-sm-7'>
+            <h2>{{title}}</h2>
+            <p class='product-description'>{{description}}</p>
+            <p>{{#link-to 'product' this class='btn btn-success'}}
+              Buy for ${{price}}{{/link-to}}</p>
+          </div>
+        </div>
+        {{/each}}
     </script>
 
     <script type='text/x-handlebars' data-template-name='contacts/index'>

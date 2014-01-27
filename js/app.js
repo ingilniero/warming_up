@@ -43,10 +43,10 @@ App.Review = DS.Model.extend({
 });
 
 App.IndexController = Ember.ArrayController.extend({
-  productsCount: Ember.computed.alias('length'),
-  logo: 'img/logo.png',
-  time: function() {
-    return (new Date).toDateString();
+  onSale: function() {
+    return this.filter(function(product) {
+      return product.get('isOnSale');
+    });
   }.property()
 });
 
