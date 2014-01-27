@@ -58,6 +58,11 @@ App.ContactsIndexController = Ember.Controller.extend({
   }.property()
 });
 
+App.ProductsController = Ember.ArrayController.extend({
+  sortProperties: ['title'],
+  sortAscending: false
+});
+
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return this.store.findAll('product');
