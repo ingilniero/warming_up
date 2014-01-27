@@ -119,6 +119,16 @@ App.Product.FIXTURES = [
     price: 20,
     reviews:[],
     crafter: 2
+  },
+  {
+    id: 3,
+    title: 'Flint',
+    image: 'img/products/flint.png',
+    description: 'When struck against steel, a flint edge will produce sparks. The hard flint edge shaves off a particle of the steel that exposes iron which reacts with oxygen from the atmosphere and can ignite the proper tinder.',
+    isOnSale: false,
+    price: 40,
+    reviews: [],
+    crafter: 1
   }
 ];
 
