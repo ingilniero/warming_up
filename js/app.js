@@ -42,8 +42,10 @@ App.Review = DS.Model.extend({
   product: DS.belongsTo('product')
 });
 
-App.IndexController = Ember.Controller.extend({
-  productsCount: 6,
+App.IndexController = Ember.ArrayController.extend({
+  productsCount: function() {
+    return this.get('length');
+  }.property('length'),
   logo: 'img/logo.png',
   time: function() {
     return (new Date).toDateString();
@@ -84,6 +86,12 @@ App.ContactsRoute = Ember.Route.extend({
 App.ContactRoute = Ember.Route.extend({
   model: function(params) {
     return this.store.find('contact', params.contact_id);
+  }
+});
+
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.findAll('product');
   }
 });
 
