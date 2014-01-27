@@ -77,6 +77,17 @@
 
     <script type='text/x-handlebars' data-template-name='products/index'>
       <p class='text-muted'>Choose a product from the list on the left.</p>
+      <h2>Products under $10!</h2>
+      {{#each deals}}
+        <diV class='col-sm-4'>
+          <img {{bind-attr src='image'}} class='img-thubmnail col-sm-5' />
+          <div class='col-sm-7'>
+            <h2>{{title}}</h2>
+            <p>{{#link-to 'product' this class='btn btn-success'}}
+              Buy for ${{price}}{{/link-to}}</p>
+          </div>
+        </div>
+      {{/each}}
     </script>
 
     <script type='text/x-handlebars' data-template-name='product'>

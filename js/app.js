@@ -67,6 +67,20 @@ App.ProductsController = Ember.ArrayController.extend({
   sortAscending: false
 });
 
+App.ProductsIndexController = Ember.ArrayController.extend({
+  deals: function() {
+    return this.filter(function(product) {
+      return product.get('price') <= 10;
+    });
+  }.property('@each.price')
+});
+
+App.ProductsIndexRoute = Ember.Route.extend({
+  model: function(){
+    return this.store.findAll('product');
+  }
+});
+
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return this.store.findAll('product');
