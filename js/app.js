@@ -44,9 +44,7 @@ App.Review = DS.Model.extend({
 
 App.IndexController = Ember.ArrayController.extend({
   onSale: function() {
-    return this.filter(function(product) {
-      return product.get('isOnSale');
-    });
+    return this.filterBy('isOnSale', true);
   }.property()
 });
 
