@@ -56,12 +56,6 @@ App.ContactsIndexController = Ember.ObjectController.extend({
   }.property()
 });
 
-App.ContactsIndexRoute = Ember.Route.extend({
-  model: function() {
-    return this.store.find('contact', 2)
-  }
-})
-
 App.ProductsController = Ember.ArrayController.extend({
   sortProperties: ['title'],
   sortAscending: false
@@ -74,6 +68,12 @@ App.ProductsIndexController = Ember.ArrayController.extend({
     });
   }.property('@each.price')
 });
+
+App.ContactsIndexRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('contact', 2)
+  }
+})
 
 App.ProductsIndexRoute = Ember.Route.extend({
   model: function(){
