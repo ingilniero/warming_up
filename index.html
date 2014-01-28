@@ -29,17 +29,24 @@
     </script>
 
     <script type='text/x-handlebars' data-template-name='index'>
-      {{#each onSale}}
-        <diV class='col-sm-4'>
-          <img {{bind-attr src='image'}} class='img-thubmnail col-sm-5' />
-          <div class='col-sm-7'>
-            <h2>{{title}}</h2>
-            <p class='product-description'>{{description}}</p>
-            <p>{{#link-to 'product' this class='btn btn-success'}}
-              Buy for ${{price}}{{/link-to}}</p>
-          </div>
+      <div class='body-content'>
+        <div class='row'>
+          {{#each onSale}}
+            <div class='col-sm-4'>
+              <img {{bind-attr src='image'}} class='img-thubmnail col-sm-5' />
+              <div class='col-sm-7'>
+                <h2>{{title}}</h2>
+                <span class='label label-warning'>
+                  {{#link-to 'products.onsale'}}On Sale{{/link-to}}
+                </span>
+                <p class='product-description'>{{description}}</p>
+                <p>{{#link-to 'product' this class='btn btn-success'}}
+                    Buy for ${{price}}{{/link-to}}</p>
+              </div>
+            </div>
+          {{/each}}
         </div>
-        {{/each}}
+      </div>
     </script>
 
     <script type='text/x-handlebars' data-template-name='contacts/index'>
